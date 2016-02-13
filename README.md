@@ -28,4 +28,6 @@
 
 - Services
   - Creating a Service
-  - Talking to controllers +
+  - Talking to controllers
+    - Injecting into controllers
+    - Push/Pull methodology
