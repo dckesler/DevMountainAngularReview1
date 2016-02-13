@@ -1,11 +1,37 @@
 
 <!DOCTYPE html>
-<html>
+<html ng-app="app">
   <head>
     <meta charset="utf-8">
     <title></title>
   </head>
-  <body>
+  <body ng-controller="ctrl">
+    <!-- NG MODEL -->
+    <input ng-model="input"/>
+    <div>{{input}}</div>
+
+    <!-- NG REPEAT -->
+    <div ng-repeat="person in persons | filter: input">
+      <h1>{{person.name}}</h1>
+      <h3>{{person.age}}</h3>
+      <button ng-click="remove($index)" style="font-size:2rem">
+        Delete This Person
+      </button>
+    </div>
+
+    <!-- NG SHOW -->
+    <h1 ng-show="showHide">Show this or hide this</h1>
+    <button ng-click="toggle()" style="font-size:2rem">Show/Hide</button>
+
+    <!-- NG STYLE -->
+    <div style="width:100px;height:100px" ng-style="style"></div>
+    <input style="font-size:2rem" ng-model="style.background"/>
+
+    <!-- NG OPTIONS -->
+    <select ng-model="select" style="font-size:2rem" ng-options="option.value as option.label for option in options"></select>
+
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="app.js"></script>
+    <script src="controller.js"></script>
   </body>
 </html>
